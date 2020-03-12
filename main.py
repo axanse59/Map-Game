@@ -18,20 +18,42 @@ pp= pyglet.image.load('terrain-v7.png')
 smol_pp = pp.get_region(x=510 , y= 1459, width=35 , height=32)
 poi = pyglet.sprite.Sprite(smol_pp, x = 0, y = 0)
 
-uu= pyglet.image.load('torso.png')
-smol_uu = uu.get_region(x=2 , y= 5 , width=90 , height=128)
-moi = pyglet.sprite.Sprite(smol_uu, x = 300, y = 200)
+oo= pyglet.image.load('survivor-shoot_rifle_1.png')
+smol_oo = oo.get_region(x=0 , y= 15, width=310 , height=160)
+riu = pyglet.sprite.Sprite(smol_oo, x = 180, y = 217)
+riu.scale =1/5
 
+ll= pyglet.image.load('survivor-shoot_rifle_1.png')
+smol_ll = ll.get_region(x=0 , y= 15, width=310 , height=160)
+thu = pyglet.sprite.Sprite(smol_ll, x = 400, y = 217)
+thu.scale =1/5
+
+
+uu= pyglet.image.load('Pistol.png')
+smol_uu = uu.get_region(x=0 , y=0 , width=16 , height=16)
+moi = pyglet.sprite.Sprite(smol_uu, x = 239, y = 219)
+#moi.scale = 
+
+# jj= pyglet.image.load('head.png')
+# smol_jj = jj.get_region(x=2 , y= 5 , width=90 , height=90)
+# oil= pyglet.sprite.Sprite(smol_jj, x = 302, y = 217)
+# oil.scale = 1/5
 
 sprites=[]
 def Arena():
 
   for j in range(5):
     for i in range(19):
-      sprites.append(pyglet.sprite.Sprite(smol_he, x = 200, y = i * 30,))
+      sprites.append(pyglet.sprite.Sprite(smol_he, x = 136, y = i * 30,))
 
   for y in range(19):
-    sprites.append(pyglet.sprite.Sprite(smol_tt, x = 420, y = y * 30,))
+    sprites.append(pyglet.sprite.Sprite(smol_tt, x = 452, y = y * 30,))
+
+  for q in range(19):
+    sprites.append(pyglet.sprite.Sprite(smol_ii, x = 168, y = q * 30,))
+
+  for q in range(19):
+    sprites.append(pyglet.sprite.Sprite(smol_ii, x = 200, y = q * 30,))
 
   for q in range(19):
     sprites.append(pyglet.sprite.Sprite(smol_ii, x = 232, y = q * 30,))
@@ -50,6 +72,9 @@ def Arena():
 
   for q in range(19):
     sprites.append(pyglet.sprite.Sprite(smol_ii, x = 392, y = q * 30,))
+  
+  for q in range(19):
+    sprites.append(pyglet.sprite.Sprite(smol_ii, x = 424, y = q * 30,))
 
 def Lava():
   for a in range(6):
@@ -77,17 +102,20 @@ def Lava():
 
 
 def update(dt):
-  pass
+#  if moi.x 
 
 # Start the event loop
 @win.event
 def on_draw():
     win.clear()
-    Arena()
     Lava()
+    Arena()
     for i in range(len(sprites)):
       sprites[i].draw()
-
+    riu.draw()
+    thu.draw()
+    moi.draw()
+    # oil.draw()
  
       
  
