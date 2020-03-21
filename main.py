@@ -99,25 +99,33 @@ def Lava():
   for c in range(19):
     sprites.append(pyglet.sprite.Sprite(smol_pp, x =615, y = c * 32,))
 
-
+keys = pyglet.window.key.KeyStateHandler()
+win.push_handlers(keys)
 
 def update(dt):
-#  if moi.x 
+  pass
+  if keys[pyglet.window.key.LEFT]:
+    riu.x -= 7
+  if keys[pyglet.window.key.RIGHT]:
+    riu.x += 7
+  if keys[pyglet.window.key.UP]:
+    riu.y +=7
+  if keys[pyglet.window.key.DOWN]:
+    riu.y -=7
+
 
 # Start the event loop
 @win.event
 def on_draw():
-    win.clear()
-    Lava()
-    Arena()
-    for i in range(len(sprites)):
-      sprites[i].draw()
-    riu.draw()
-    thu.draw()
-    moi.draw()
-    # oil.draw()
- 
-      
+  win.clear()
+  Lava()
+  Arena()
+  for i in range(len(sprites)):
+    sprites[i].draw()
+  riu.draw()
+  thu.draw()
+  moi.draw()
+  # oil.draw()
  
  
 pyglet.clock.schedule(update) 
